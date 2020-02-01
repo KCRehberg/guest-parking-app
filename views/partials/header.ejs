@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Parking App</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+        <script src="https://kit.fontawesome.com/a5cfd7a946.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-0">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <span class="ml-5 navbar-text">
+                    (954)-534-6295
+                </span>
+                <span class="ml-5 navbar-text">
+                    info@guestparking.net
+                </span>
+                <ul class="navbar-nav ml-auto">
+                    <% if(!currentUser){ %>
+                        <li class="nav-item bg-primary">
+                            <a class="nav-link" href="/login"> Admin Login<span class="sr-only">(current)</span></a>
+                        </li>
+                    <% } else { %> 
+                        <li class="nav-item bg-primary">
+                            <a class="nav-link" href="/logout">Logout<span class="sr-only">(current)</span></a>
+                        </li>
+                    <% } %>
+                    <li class="nav-item bg-primary">
+                        <a class="nav-link" href="/contact">Contact Us<span class="sr-only">(current)</span></a>
+                    </li>
+                    <div class="mr-5">
+
+                    </div>
+                </ul>
+            </div>
+        </nav>
+        <div class="text-white bg-secondary">
+            <div class="container p-5">
+            <p>Having Issues with Guests staying to long? Try Guest Parking.net now!</p>
+            <h2 class="p-4">Virtual Attendand.</h2>
+            <a href="/" class="btn btn-primary">Guest Parking</a>
+            <a href="/contact" class="btn btn-primary">Contact Us</a>
+            </div>
+        </div>
+        <div id="stripe"></div>

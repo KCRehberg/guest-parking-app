@@ -1,0 +1,45 @@
+<% include partials/header %>
+
+<div class="container">
+    <div id="success-div" class="card mt-5">
+        <div class="bg-primary p-2">
+            <h3><%= guest.property %></h3>
+        </div>
+        <div class="bg-light text-dark">
+            <div class="m-5 text-left">
+                <h4 class="text-success">YOU HAVE SUCCESSFULLY REGISTERED YOUR VEHICLE</h4>
+                <p>You can view your new Guest Parking permit below. <br>We Have also sent you a confirmation email.</p>
+                <hr>
+                <h2 class="text-success">ACTIVE GUEST PARKING PERMIT</h2>
+                <div class="row">
+                    <div class=col-md-4>
+                        <p>Vehicle/Tag Number <br><i class="fas fa-car fa-2x mt-2"></i><strong class="mt-2"> <%= guest.tag %></strong></p>
+                    </div>
+                    <div class=col-md-4>
+                        <p>Apartment <br><i class="fas fa-home fa-2x mt-2"></i><strong class="mt-2"> <%= guest.unit %></strong></p>
+                    </div>
+                    <div class=col-md-4>
+                        <p>Permit # <br><i class="fas fa-receipt fa-2x mt-2"></i><strong class="mt-2"> <%= guest.permit %></strong></p>
+                    </div>
+                </div>
+                <hr>
+                <span><i class="fas fa-check-circle fa-3x ml-5"></i><strong class="ml-4">Time Started: </strong><%= date %></span>
+                <p class="ml-5 text-muted"><span class="ml-4"><i class="far fa-clock ml-5"></i> <%= time %></span></p>
+                <hr id="hr-success">
+                <i class="fas fa-times-circle fa-3x ml-5"></i>
+                <span class="ml-3"><strong>Ending Time: </strong><%= endDate %></span>
+                <p class="ml-5 text-muted"><span class="ml-4"><i class="far fa-clock ml-5"></i> <%= time %></span></p>
+                <hr id="hr-success">
+                <span class="text-muted"><i class="fas fa-plus-circle fa-3x ml-5 mr-3"></i>You can extend your parking anytime from the email we sent you.</span> 
+                <p id="text-margin" class="text-muted">Just click on the plus sign to extend your guest parking spot.</p>
+            </div>
+        </div>
+        <div class="bg-primary pl-5 pr-5 pt-4 pb-4">
+            <p><strong>PERMIT IS RECORDED</strong> and <strong>ACTIVE</strong>. 
+            No need to print this. We have emailed you a copy of this permit. 
+            Please check your spam folder if you do not see it. The email will allow you to extend your visit</p>
+        </div>
+    </div>
+</div>
+
+<% include partials/footer %>

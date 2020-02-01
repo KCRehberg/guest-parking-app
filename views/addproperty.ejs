@@ -1,0 +1,21 @@
+<% include partials/header %>
+
+<div class="container">
+    <div id="registrationForm" class="card card-body bg-primary text-left mt-5 p-4">
+        <h3>Add a Property</h3>
+        <p>Please fill out the below information to <strong>add a new property.</strong></p>
+        <form action="/admin/addproperty" method="POST" class="form-group">
+            <p class="mt-3"><strong>Property Name:</strong></p>
+            <input class="form-control" type="text" name="property[name]">
+            <p class="mt-3"><strong>Property Address:</strong></p>
+            <input class="form-control" type="text" name="property[address]">
+            <p class="mt-3"><strong>Property Image:</strong></p>
+            <input class="form-control" type="text" name="property[image]">
+            <p class="mt-3"><strong>Property Access Code:</strong></p>
+            <input class="form-control" type="text" name="property[code]">
+            <button class="form-control btn btn-success mt-4">Add Property</button>
+        </form>
+    </div>
+</div>
+
+<% include partials/footer %>

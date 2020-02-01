@@ -1,0 +1,28 @@
+<% include partials/header %>
+
+<div class="container">
+    <div id="registrationForm" class="card card-body bg-primary text-left mt-5 p-4">
+        <h3>GUEST PARKING REGISTRATION</h3>
+        <p>Please fill out the below information to <strong>Register Your Vehicle.</strong></p>
+        <form action="/access/<%= property._id %>/register" method="POST" class="form-group">
+            <p class="mt-3"><strong>Tag Number:</strong></p>
+            <input class="form-control" type="text" name="guest[tag]">
+            <p class="mt-3"><strong>Vehicle Make:</strong></p>
+            <input class="form-control" type="text" name="guest[make]">
+            <p class="mt-3"><strong>Vehicle Model:</strong></p>
+            <input class="form-control" type="text" name="guest[model]">
+            <p class="mt-3"><strong>Length of Stay:</strong></p>
+            <input class="form-control" type="text" name="guest[time]">
+            <p class="mt-3"><strong>Resident Unit Number:</strong></p>
+            <input class="form-control" type="text" name="guest[unit]">
+            <p class="mt-3"><strong>Street Address of Resident:</strong></p>
+            <input class="form-control" type="text" name="guest[address]">
+            <p class="mt-3"><strong>Your Email Address:</strong></p>
+            <input class="form-control" type="text" name="guest[email]">
+            <p class="mt-3"><strong>Your Mobile Number:</strong></p>
+            <input class="form-control" type="text" name="guest[mobile]">
+            <button class="form-control btn btn-success mt-4">Register My Vehicle</button>
+        </form>
+    </div>
+</div>
+<% include partials/footer %>

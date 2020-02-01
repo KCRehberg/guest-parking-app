@@ -1,0 +1,33 @@
+<% include partials/header %>
+
+<div class="container">
+    <h1>All Properties</h1>
+    <div class="row">
+        <div class="col-md-3 position-relative float-left">
+            <h3>SEARCH PROPERTIES</h3>
+            <a href="/admin/addproperty" class="btn btn-primary"><h5>Add a new property</h5></a>
+        </div>
+        <div class="col-md-9">
+            <ul>
+            <% user.properties.forEach(function(properties){ %>
+                <li class="card text-left text-dark mb-4" style="max-width: 700px;">   
+                <div class="row no gutters"> 
+                    <div class="col-md-4">
+                        <img class="card-img" src="<%= properties.image %>">
+                    </div>                               
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <a href="/admin/<%= properties._id %>"><h3 class="card-title"><%= properties.name %></h3></a>
+                            <hr></hr>
+                            <p class="card-text"><%= properties.address %></p>
+                        </div>
+                    </div>  
+                </li>
+            <% }); %>
+            </ul>
+            </div>
+        </div>  
+    </div>
+</div>
+
+<% include partials/footer %>
