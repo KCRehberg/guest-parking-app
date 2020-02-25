@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var db = require('../models')
-var moment = require("moment")
+var moment = require("moment-timezone")
 
 // Contact route
 router.get("/contact", function(req, res){
@@ -90,10 +90,11 @@ router.get("/parking/:id/register/:id", async function(req, res){
             let guest = await db.Guest.findById(req.params.id);
             // let user = await User.findById(req.user.id);
             // console.log(user);
-            let date = moment().format('dddd - MMMM Do, YYYY');
-            let endDate = moment().add(1, 'days').format('dddd - MMMM Do, YYYY');
-            let time = moment().format('h:mm a');   
-            res.render("success", {guest: guest, date: date, endDate: endDate, time: time});
+            guest.startDate = moment.tz('America/New_York').format('dddd - MMMM Do, YYYY');
+            guest.endDate = moment.tz('America/New_York').add(1, 'days').format('dddd - MMMM Do, YYYY');
+            guest.startTime = moment.tz('America/New_York').format('h:mm a');
+            await guest.save();   
+            res.render("success", {guest: guest});
         } catch(err){
             console.log(err);
         }

@@ -16,10 +16,10 @@
                         <img class="card-img" id="property-img" src="<%= property.image %>">
                     </div>                               
                     <div class="col-md-8">
-                        <div class="card-body">
+                        <div class="card-body pb-0">
                             <a href="/admin/<%= property._id %>"><h3 class="card-title"><%= property.name %></h3></a>
                             <hr></hr>
-                            <p class="card-text"><%= property.address %></p>
+                            <p class="card-text mb-0"><%= property.address %><span class="ml-5">Access Code: <%= property.code %></span></p></p>
                         </div>
                     </div> 
                 </div> 

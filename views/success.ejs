@@ -23,15 +23,40 @@
                     </div>
                 </div>
                 <hr>
-                <span><i class="fas fa-check-circle fa-3x ml-5"></i><strong class="ml-4">Time Started: </strong><%= date %></span>
-                <p class="ml-5 text-muted"><span class="ml-4"><i class="far fa-clock ml-5"></i> <%= time %></span></p>
-                <hr id="hr-success">
-                <i class="fas fa-times-circle fa-3x ml-5"></i>
-                <span class="ml-3"><strong>Ending Time: </strong><%= endDate %></span>
-                <p class="ml-5 text-muted"><span class="ml-4"><i class="far fa-clock ml-5"></i> <%= time %></span></p>
-                <hr id="hr-success">
-                <span class="text-muted"><i class="fas fa-plus-circle fa-3x ml-5 mr-3"></i>You can extend your parking anytime from the email we sent you.</span> 
-                <p id="text-margin" class="text-muted">Just click on the plus sign to extend your guest parking spot.</p>
+                <div class="row mt-5">
+                    <div class="col-md-2 col-sm-3 px-0">
+                        <i class="fas fa-check-circle fa-3x ml-5"></i>
+                    </div>
+                    <div class="col-md-10 col-sm-9 px-0">
+                        <p class="ml-3"><strong>Time Started: </strong><%= guest.startDate %></p>
+                        <p class="text-muted"><span class="ml-4"><i class="far fa-clock"></i> <%= guest.startTime %></span></p>
+                        <hr id="hr-success">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 col-sm-3 px-0">
+                        <i class="fas fa-times-circle fa-3x ml-5"></i>
+                    </div>
+                    <div class="col-md-10 col-sm-9 px-0">
+                        <p class="ml-3"><strong>Ending Time: </strong><%= guest.endDate %></p>
+                        <p class="text-muted"><span class="ml-4"><i class="far fa-clock"></i> <%= guest.startTime %></span></p>
+                        <hr id="hr-success">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 col-sm-3 px-0">
+                        <i class="fas fa-plus-circle fa-3x ml-5 mr-3"></i>
+                    </div>
+                    <div class="col-md-10 col-sm-9 px-0">
+                        <p class="text-muted ml-3">
+                            You can extend your parking anytime from the email we 
+                            <br>
+                            sent you. Just click on the plus sign to extend your guest 
+                            <br>
+                            parking spot.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="bg-primary pl-5 pr-5 pt-4 pb-4">

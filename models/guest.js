@@ -11,7 +11,11 @@ const guestSchema = new mongoose.Schema({
     address: String,
     email: String,
     mobile: String,
-    permit: String
+    permit: String,
+    startDate: String,
+    endDate: String,
+    startTime: String,
+    endTime: String
 });
 
 module.exports = mongoose.model("Guest", guestSchema);
