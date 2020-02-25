@@ -24,7 +24,6 @@ router.get("/admin", isLoggedIn, async function(req, res){
          let property = await db.Property.create(req.body.property);
          await user.properties.push(property);
          await user.save();
-         console.log(user);
          res.redirect("/admin");
      } catch(err){
          console.log(err);
@@ -34,8 +33,8 @@ router.get("/admin", isLoggedIn, async function(req, res){
  router.get("/admin/:id", isLoggedIn, async function(req, res){
      try {
          let property = await db.Property.findById(req.params.id);
-         let guests = await db.Guest.find(property.guests.id)
-         res.render("propertyShow", {guests: guests, property: property});
+         let guest = await db.Guest.find({_id: property.guests});
+         res.render("propertyShow", {guests: guest, property: property});
      } catch(err){
          console.log(err);
      }
