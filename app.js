@@ -4,28 +4,15 @@ const express = require("express"),
       mongoose = require("mongoose"),
       passport = require("passport"),
       LocalStrategy = require("passport-local"),
-      passportLocalMongoose = require("passport-local-mongoose"),
-      moment = require("moment"),
-      nodemailer = require("nodemailer")
-      User = require('./models/user')
-      parkingRoutes = require('./routes/guestParking')
+      User = require('./models/user'),
+      parkingRoutes = require('./routes/guestParking'),
       adminRoutes = require('./routes/admin')
-
 
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(express.static(__dirname + '/views'));
-
-// var transport = nodemailer.createTransport({
-//   host: "smtp.mailtrap.io",
-//   port: 2525,
-//   auth: {
-//     user: "fd37c262ae64e2",
-//     pass: "bbea8f27d9f3fd"
-//   }
-// });
 
 //PASSPORT CONFIG
 app.use(require("express-session")({

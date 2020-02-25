@@ -15,7 +15,8 @@ const guestSchema = new mongoose.Schema({
     startDate: String,
     endDate: String,
     startTime: String,
-    endTime: String
+    endTime: String,
+    active: Boolean
 });
 
 module.exports = mongoose.model("Guest", guestSchema);
