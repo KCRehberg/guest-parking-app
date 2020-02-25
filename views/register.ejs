@@ -4,7 +4,7 @@
     <div id="registrationForm" class="card card-body bg-primary text-left mt-5 p-4">
         <h3>GUEST PARKING REGISTRATION</h3>
         <p>Please fill out the below information to <strong>Register Your Vehicle.</strong></p>
-        <form action="/access/<%= property._id %>/register" method="POST" class="form-group">
+        <form action="/parking/<%= property._id %>/register" method="POST" class="form-group">
             <p class="mt-3"><strong>Tag Number:</strong></p>
             <input class="form-control" type="text" name="guest[tag]">
             <p class="mt-3"><strong>Vehicle Make:</strong></p>
