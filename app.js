@@ -33,13 +33,13 @@ app.use(function(req, res, next){
 
 });
 
-app.use('/', parkingRoutes);
-app.use('/', adminRoutes);
-
 //home route
 app.get("/", function(req, res){ 
     res.render("home", {currentUser: req.user});
 });
+
+app.use('/', parkingRoutes);
+app.use('/', adminRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

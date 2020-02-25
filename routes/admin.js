@@ -1,7 +1,7 @@
-var express = require('express');
-var router = express.Router();
-var db = require('../models');
-var passport = require("passport");
+const express = require('express'),
+      router = express.Router(),
+      db = require('../models'),
+      passport = require("passport")
 
 //ADMIN LOGIN ROUTES
 router.get("/admin", isLoggedIn, async function(req, res){
@@ -14,11 +14,11 @@ router.get("/admin", isLoggedIn, async function(req, res){
     }
  });
  
- router.get("/admin/addproperty", function(req, res){
+ router.get("/admin/addproperty", isLoggedIn, function(req, res){
      res.render("addproperty");
  });
  
- router.post("/admin/addproperty", async function(req, res){
+ router.post("/admin/addproperty", isLoggedIn, async function(req, res){
      try {
          let user = await db.User.findById(req.user.id);
          let property = await db.Property.create(req.body.property);

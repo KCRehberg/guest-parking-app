@@ -1,8 +1,8 @@
-var express = require('express');
-var router = express.Router();
-var db = require('../models');
-var moment = require('moment-timezone');
-var nodemailer = require('nodemailer');
+const express = require('express'),
+      router = express.Router(),
+      db = require('../models'),
+      moment = require('moment-timezone'),
+      nodemailer = require('nodemailer')
 
 // Contact route
 router.get("/contact", function(req, res){
@@ -10,7 +10,6 @@ router.get("/contact", function(req, res){
 });
 
 router.post("/contact", function(req, res){
-    
         let email = req.body.email;
         let subject = req.body.subject;
         let message = req.body.message;
