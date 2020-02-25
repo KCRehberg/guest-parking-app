@@ -52,6 +52,10 @@
     width: 100%;
 }
 
+#property-list {
+    padding-inline-start: 0;
+}
+
 #register-form {
     color: black;
     margin: auto;
