@@ -97,6 +97,17 @@ router.post("/parking/:id/register", async function(req, res){
     }
 });
 
+// //extend registration route
+// router.get("/parking/:id/extend", async function(req, res){
+//     try{
+//         let property = await db.Property.findById(req.params.id);
+//         let guest = await db.Guest.find({_id: property.guests});
+        
+//     } catch(err){
+//         console.log(err);
+//     }  
+// });
+
 //successful registration route
 router.get("/parking/:id/register/:id", async function(req, res){
         try {

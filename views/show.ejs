@@ -5,7 +5,7 @@
         <h3>Welcome to <%= property.name %></h3>
         <p>Please select from the buttons below to <strong>Register a vehicle</strong> or <strong>Extend a Current Registration.</strong></p>
         <a href="/parking/<%= property._id %>/register" class="btn btn-success">REGISTER MY VEHICLE</a>
-        <a class="btn btn-danger mt-3">EXTEND MY CURRENT REGISTRATION</a>
+        <a class="btn btn-danger mt-3" href="/parking/<%= property._id %>/extend">EXTEND MY CURRENT REGISTRATION</a>
     </div>
 </div>
 

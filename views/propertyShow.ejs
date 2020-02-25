@@ -27,7 +27,7 @@
                             <td scope="col">Tag</td>
                             <td scope="col">Unit</td>
                             <td scope="col">Permit</td>
-                            <td scope="col">Time</td>
+                            <td scope="col">Status</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -36,7 +36,11 @@
                         <td><%= guests.tag %></td>
                         <td><%= guests.unit %></td>
                         <td><%= guests.permit %></td>
-                        <td><%= guests.time %></td>
+                        <% if(guests.active){ %>
+                        <td class="text-success">ACTIVE</td>
+                        <% } else{ %>
+                        <td class="text-danger">EXPIRED</td>
+                        <% } %>  
                     </tr>
                 <% }); %>
                     </tbody>

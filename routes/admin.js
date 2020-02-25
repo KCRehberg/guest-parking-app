@@ -1,7 +1,8 @@
 const express = require('express'),
       router = express.Router(),
       db = require('../models'),
-      passport = require("passport")
+      passport = require("passport"),
+      moment = require('moment-timezone')
 
 //ADMIN LOGIN ROUTES
 router.get("/admin", isLoggedIn, async function(req, res){
@@ -32,9 +33,15 @@ router.get("/admin", isLoggedIn, async function(req, res){
  
  router.get("/admin/:id", isLoggedIn, async function(req, res){
      try {
-         let property = await db.Property.findById(req.params.id);
-         let guest = await db.Guest.find({_id: property.guests});
-         res.render("propertyShow", {guests: guest, property: property});
+        let property = await db.Property.findById(req.params.id);
+        let guest = await db.Guest.find({_id: property.guests});
+        await guest.forEach(function(guest){
+            if(moment().tz('America/New_York').isAfter(guest.time)){
+                guest.active = false;
+                guest.save();
+        }
+        });
+        res.render("propertyShow", {guests: guest, property: property});
      } catch(err){
          console.log(err);
      }
