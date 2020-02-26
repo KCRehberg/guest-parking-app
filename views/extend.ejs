@@ -3,10 +3,10 @@
 <div class="container">
     <div id="register-form" class="card bg-primary text-white p-5 mt-5">
         <h3>EXTEND PARKING REGISTRATION</h3>
-        <p>Welcome, please enter your tenants 4 digit pin to acees their <strong>Guest Parking</strong> portal.</p>
-        <form action="/parking" method="POST">
-            <p class="float-left">Tenant 4 Digit Parking Access Pin:</p>
-            <input class="form-control" type="text" name="code">
+        <p>Please enter your vehicle's tag number to search for your registration</p>
+        <form action="/parking/<%= property._id %>/extend" method="POST">
+            <p class="float-left">Vehicle Tag Number:</p>
+            <input class="form-control" type="text" name="tag">
             <button class="form-control btn btn-lg btn-success mt-4">Submit</button>
         </form>
     </div>
