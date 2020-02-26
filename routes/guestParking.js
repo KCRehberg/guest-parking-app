@@ -116,7 +116,7 @@ router.get("/parking/:id/register/:id", async function(req, res){
             guest.endDate = moment(guest.time).format("dddd - MMMM Do, YYYY");
             guest.startTime = moment.tz('America/New_York').format('h:mm a');
             guest.endTime = moment(guest.time).format('h:mm a');
-            guest.time = endDate + endTime;
+            guest.time = guest.endDate + " " + guest.endTime;
             guest.active = true;
             await guest.save();   
             res.render("success", {guest: guest});
