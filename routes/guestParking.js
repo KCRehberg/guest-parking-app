@@ -105,8 +105,9 @@ router.post("/parking/:id/extend", async function(req, res){
 router.get("/parking/:id/extend/:id", async function(req, res){
     try{ 
         let guest = await db.Guest.findById(req.params.id);
+        let property = await db.Property.findOne({name: guest.property});
         if(guest){
-            res.render("extendRegistration", {guest: guest});
+            res.render("extendRegistration", {guest: guest, property: property});
         } else {
             res.redirect('back');
         } 
