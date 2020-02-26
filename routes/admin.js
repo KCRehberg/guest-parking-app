@@ -37,7 +37,7 @@ router.get("/admin", isLoggedIn, async function(req, res){
         let guest = await db.Guest.find({_id: property.guests});
         
         await guest.forEach(function(guest){
-            if(moment().tz('America/New_York').isAfter(guest.time)){
+            if(moment.tz('America/New_York').isAfter(guest.time)){
                 guest.active = false;
                 guest.save();
         }
