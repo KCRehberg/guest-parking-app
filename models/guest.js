@@ -6,7 +6,7 @@ const guestSchema = new mongoose.Schema({
     tag: String,
     make: String,
     model: String,
-    time: String,
+    time: Date,
     unit: String,
     address: String,
     email: String,
