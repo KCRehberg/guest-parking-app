@@ -120,12 +120,13 @@ router.get("/parking/:id/extend/:id", async function(req, res){
 router.post("/parking/:id/extend/:id", async function(req, res){
     try{ 
         let guest = await db.Guest.findById(req.params.id);
+        let property = await db.Property.findOne({name: guest.property});
         if(guest){
             guest.time = moment(req.body.extendedTime).format('YYYY-MM-DD HH:mm');
             guest.endDate = moment(guest.time).format("dddd - MMMM Do, YYYY");
             guest.endTime = moment(guest.time).format('h:mm a');
             await guest.save();
-            res.render("success", {guest: guest});
+            res.render("success", {guest: guest, property: property});
         } else {
             res.redirect('back');
         }    
