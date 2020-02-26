@@ -112,7 +112,7 @@ router.post("/parking/:id/register", async function(req, res){
 router.get("/parking/:id/register/:id", async function(req, res){
         try {
             let guest = await db.Guest.findById(req.params.id);
-            guest.time = moment(guest.time).tz('America/New_York').format();
+            guest.time = moment(guest.time).tz().format();
             guest.startDate = moment.tz('America/New_York').format('dddd - MMMM Do, YYYY');
             guest.endDate = moment(guest.time).format("dddd - MMMM Do, YYYY");
             guest.startTime = moment.tz('America/New_York').format('h:mm a');
