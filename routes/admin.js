@@ -53,8 +53,8 @@ router.get("/admin", isLoggedIn, async function(req, res){
  
  router.post("/signup", async function(req, res){
      try {
-         let newUser = new User({username: req.body.username});
-         await User.register(newUser, req.body.password);
+         let newUser = new db.User({username: req.body.username});
+         await db.User.register(newUser, req.body.password);
          passport.authenticate("local")(req, res, function(){
              res.redirect("/");
          });
