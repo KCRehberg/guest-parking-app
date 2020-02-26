@@ -126,7 +126,7 @@ router.post("/parking/:id/extend/:id", async function(req, res){
             guest.endDate = moment(guest.time).format("dddd - MMMM Do, YYYY");
             guest.endTime = moment(guest.time).format('h:mm a');
             await guest.save();
-            res.render("success", {guest: guest, property: property});
+            res.redirect("/parking/" + property._id + "/register/" + guest._id);
         } else {
             res.redirect('back');
         }    
