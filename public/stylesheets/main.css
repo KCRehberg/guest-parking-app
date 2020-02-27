@@ -1,3 +1,15 @@
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover 
+{
+     color: #007bff; 
+     text-decoration:none; 
+     cursor:pointer;  
+}
+
 .container {
     text-align: center;
 }
@@ -32,6 +44,19 @@
 #hr-success {
     width: 67%;
     margin-right: 30%;
+}
+
+#hr-footer {
+    border-bottom: solid 2px;
+    color: rgb(138, 138, 138);
+    width: 97.5%;
+    margin-right: 2.5%;
+    padding-top: 40px;
+}
+
+#footer {
+    margin-top: 10%;
+    height: 140px;
 }
 
 #registrationForm {
@@ -73,4 +98,3 @@
 #violation-subtext {
     color: red;
 }
-
