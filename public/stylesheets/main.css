@@ -59,6 +59,14 @@ a:hover
     height: 140px;
 }
 
+#trademark {
+    float: left;
+}
+
+#footer-nav {
+    float: right;
+}
+
 #registrationForm {
     margin: auto;
     max-width: 800px;
@@ -97,4 +105,20 @@ a:hover
 
 #violation-subtext {
     color: red;
+}
+
+@media (max-width: 576px) {
+    #footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #footer-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #trademark {
+        display: none;
+    }
 }
