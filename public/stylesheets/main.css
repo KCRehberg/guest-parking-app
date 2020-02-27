@@ -25,6 +25,10 @@ a:hover
     color: white;
 }
 
+.item1 {
+    margin-right: 50px;
+}
+
 .fa-check-circle {
     color: Dodgerblue;
 }
@@ -120,5 +124,8 @@ a:hover
     }
     #trademark {
         display: none;
+    }
+    .item1 {
+        margin-right: 0;
     }
 }
