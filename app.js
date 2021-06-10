@@ -1,7 +1,6 @@
 const express = require("express"),
       app = express(),
       bodyParser     = require("body-parser"),
-      mongoose = require("mongoose"),
       passport = require("passport"),
       LocalStrategy = require("passport-local"),
       User = require('./models/user'),
@@ -30,7 +29,6 @@ passport.deserializeUser(User.deserializeUser());
 app.use(function(req, res, next){
     res.locals.currentUser = req.user;
     next();
-
 });
 
 //home route

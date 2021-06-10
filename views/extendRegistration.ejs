@@ -44,7 +44,7 @@
                     <h3>EXTEND PARKING REGISTRATION</h3>
                     <form action="/parking/<%= property._id %>/extend/<%= guest._id %>" method="POST">
                         <p class="mt-3 text-left"><strong>Length of Stay: (14 days max)</strong></p>
-                        <input class="form-control" type="datetime-local" name="extendedTime">
+                        <input required class="form-control" type="date" name="extendedTime">
                         <button class="form-control btn btn-lg btn-success mt-4">Submit</button>
                     </form>
                 </div>

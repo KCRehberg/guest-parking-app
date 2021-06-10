@@ -1,17 +1,18 @@
 {
-  "name": "parkingapp",
+  "name": "guest-parking-app",
   "version": "1.0.0",
-  "description": "Community parking app to help manage a communities residents or guests.",
+  "description": "Parking App for managing residential and commerical parking.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
   },
-  "author": "Kevin Rehberg",
+  "author": "K.C. Rehberg",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
     "connect-flash": "^0.1.1",
+    "dotenv": "^10.0.0",
     "ejs": "^2.7.1",
     "express": "^4.17.1",
     "express-session": "^1.17.0",
