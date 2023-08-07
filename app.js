@@ -33,7 +33,7 @@ app.use(function(req, res, next){
 
 //home route
 app.get("/", function(req, res){ 
-    res.render("home", {currentUser: req.user});
+    res.render("/home/ubuntu/guest-parking-app/views/home", {currentUser: req.user});
 });
 
 app.use('/', parkingRoutes);
