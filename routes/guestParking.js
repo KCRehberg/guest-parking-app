@@ -6,7 +6,7 @@ const express = require('express'),
 
 // Contact route
 router.get("/contact", function(req, res){
-    res.render("contact");
+    res.render("/home/ubuntu/guest-parking-app/views/contact");
 });
 
 router.post("/contact", function(req, res){
@@ -42,7 +42,7 @@ router.post("/contact", function(req, res){
 
 //parking route
 router.get("/parking", function(req, res){
-        res.render("parking");
+        res.render("/home/ubuntu/guest-parking-app/views/parking");
 });
 
 //Access Search property route
@@ -62,7 +62,7 @@ router.get("/parking/:id", async function(req, res){
     try{
         let foundProperty = await db.Property.findById(req.params.id);
         if(foundProperty){
-            res.render("show", {property: foundProperty});
+            res.render("/home/ubuntu/guest-parking-app/views/show", {property: foundProperty});
         } else {
             res.redirect('back');
         } 
@@ -77,7 +77,7 @@ router.get("/parking/:id/extend", async function(req, res){
     try{
         let property = await db.Property.findById(req.params.id);
         if(property){
-            res.render('extend', {property: property});
+            res.render('/home/ubuntu/guest-parking-app/views/extend', {property: property});
         } else {
             res.redirect('back');
         } 
@@ -107,7 +107,7 @@ router.get("/parking/:id/extend/:id", async function(req, res){
         let guest = await db.Guest.findById(req.params.id);
         let property = await db.Property.findOne({name: guest.property});
         if(guest){
-            res.render("extendRegistration", {guest: guest, property: property});
+            res.render("/home/ubuntu/guest-parking-app/views/extendRegistration", {guest: guest, property: property});
         } else {
             res.redirect('back');
         } 
@@ -141,7 +141,7 @@ router.get("/parking/:id/register", async function(req, res){
     try{
         let foundProperty = await db.Property.findById(req.params.id);
         if(foundProperty){
-            res.render("register", {property: foundProperty});
+            res.render("/home/ubuntu/guest-parking-app/views/register", {property: foundProperty});
         } else {
             res.redirect('back');
         } 
@@ -185,7 +185,7 @@ router.get("/parking/:id/register/:id", async function(req, res){
                 guest.endTime = moment(guest.time).format('h:mm a');
                 guest.active = true;
                 await guest.save();
-                res.render("success", {guest: guest, property: property});
+                res.render("/home/ubuntu/guest-parking-app/views/success", {guest: guest, property: property});
             } else {
                 res.redirect('back');
             }    

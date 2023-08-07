@@ -9,14 +9,14 @@ router.get("/admin", isLoggedIn, async function(req, res){
     try {
         let user = await db.User.findById(req.user.id);
         let properties = await db.Property.find(user.properties.id)
-        res.render("admin", {properties: properties});
+        res.render("/home/ubuntu/guest-parking-app/views/admin", {properties: properties});
     } catch(err){
         console.log(err);
     }
  });
  
  router.get("/admin/addproperty", isLoggedIn, function(req, res){
-     res.render("addproperty");
+     res.render("/home/ubuntu/guest-parking-app/views/addproperty");
  });
  
  router.post("/admin/addproperty", isLoggedIn, async function(req, res){
@@ -42,14 +42,14 @@ router.get("/admin", isLoggedIn, async function(req, res){
                 guest.save();
         }
         });
-        res.render("propertyShow", {guests: guest, property: property});
+        res.render("/home/ubuntu/guest-parking-app/views/propertyShow", {guests: guest, property: property});
      } catch(err){
          console.log(err);
      }
  });
  
  router.get("/signup", function(req, res){
-     res.render("signup");
+     res.render("/home/ubuntu/guest-parking-app/views/signup");
  });
  
  router.post("/signup", async function(req, res){
@@ -61,12 +61,12 @@ router.get("/admin", isLoggedIn, async function(req, res){
          });
      } catch(err){
          console.log(err);
-         return res.render("signup");
+         return res.render("/home/ubuntu/guest-parking-app/views/signup");
      }
  });
  
  router.get("/login", function(req, res){
-     res.render("login");
+     res.render("/home/ubuntu/guest-parking-app/views/login");
  });
  
  router.post("/login", passport.authenticate("local", 
